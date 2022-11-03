@@ -17,7 +17,7 @@ namespace FirstMauiApp
         public async void GetToonsAsync()
         {
             HttpClient client = new HttpClient();
-            var stream = client.GetStreamAsync("https://api4all.azurewebsites.net/api/people");
+            var stream = client.GetStreamAsync("https://apipool.azurewebsites.net/api/toons");
             var data = await JsonSerializer.DeserializeAsync<Toon[]>(await stream);
             Dispatcher.Dispatch(() => cvToons.ItemsSource = data);
         }
